@@ -1,0 +1,38 @@
+2026-07-01 20:07:41 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.4.Final
+2026-07-01 20:07:41 [main] INFO  com.sqx.SqxApplication - Starting SqxApplication using Java 17.0.12 on XF-202111191632 with PID 28704 (F:\work\Vue3\AI_chongwu\ai-sqx-server\sqx-application\target\sqx-server.jar started by Administrator in F:\work\Vue3\AI_chongwu\ai-sqx-server\scripts)
+2026-07-01 20:07:41 [main] INFO  com.sqx.SqxApplication - The following 1 profile is active: "prod"
+2026-07-01 20:07:46 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2026-07-01 20:07:50 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2026-07-01 20:07:53 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9294"]
+2026-07-01 20:07:53 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-07-01 20:07:53 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2026-07-01 20:07:53 [main] INFO  o.a.c.c.C.[.[localhost].[/sqx_fast] - Initializing Spring embedded WebApplicationContext
+2026-07-01 20:08:01 [main] INFO  c.s.c.core.config.ThreadPoolConfig - 初始化异步线程池
+2026-07-01 20:08:01 [main] INFO  c.s.c.core.config.ThreadPoolConfig - 系统可用线程池个数:17
+2026-07-01 20:08:01 [main] INFO  c.s.c.redis.config.RedissonConfig - 初始化Redisson
+2026-07-01 20:08:02 [main] INFO  org.redisson.Version - Redisson 3.18.0
+2026-07-01 20:08:02 [redisson-netty-2-5] INFO  o.r.c.p.MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2026-07-01 20:08:02 [redisson-netty-2-19] INFO  o.r.c.pool.MasterConnectionPool - 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2026-07-01 20:08:02 [main] INFO  c.s.c.w.config.WebSocketConfig - [websocket] - 注册到路径: ws
+2026-07-01 20:08:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9294"]
+2026-07-01 20:08:04 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 9294 is already in use
+2026-07-01 20:08:05 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2026-07-01 20:08:05 [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2026-07-01 20:08:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9294"]
+2026-07-01 20:08:05 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-07-01 20:08:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9294"]
+2026-07-01 20:08:05 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-9294"]
+2026-07-01 20:08:05 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9294 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9294 or configure this application to listen on another port.
+

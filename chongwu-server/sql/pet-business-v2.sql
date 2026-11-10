@@ -1,0 +1,2 @@
+-- 已废弃：MySQL 8.0+ 语法，请勿使用
+-- 请使用 MySQL 5.7 兼容脚本：pet-business-v2-mysql57.sql

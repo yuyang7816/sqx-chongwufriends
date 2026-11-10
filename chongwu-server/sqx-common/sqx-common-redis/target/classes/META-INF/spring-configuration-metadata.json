@@ -1,0 +1,101 @@
+{
+  "groups": [
+    {
+      "name": "redisson",
+      "type": "com.sqx.common.redis.config.properties.RedissonProperties",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "redisson.connect-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.connection-minimum-idle-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.connection-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.database",
+      "type": "java.lang.Integer",
+      "description": "数据库",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.dns-monitoring-interval",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.host",
+      "type": "java.lang.String",
+      "description": "redis地址",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.idle-connection-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.netty-threads",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.password",
+      "type": "java.lang.String",
+      "description": "redis密码",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.port",
+      "type": "java.lang.Integer",
+      "description": "redis端口号",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.retry-attempts",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.retry-interval",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.subscription-connection-minimum-idle-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.subscription-connection-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.subscriptions-per-connection",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.threads",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    },
+    {
+      "name": "redisson.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.sqx.common.redis.config.properties.RedissonProperties"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,11 @@
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\config\WebSocketAutoConfiguration.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\config\WebSocketConfig.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\constants\WebSocketConstants.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\domain\MessageDto.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\enums\MessageTypeEnum.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\event\MessageEvent.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\handler\ICustomMessageHandler.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\handler\WebSocketHandler.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\holder\WebSocketSessionHolder.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\interceptor\WebSocketInterceptor.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-websocket\src\main\java\com\sqx\common\websocket\utils\WebSocketUtils.java

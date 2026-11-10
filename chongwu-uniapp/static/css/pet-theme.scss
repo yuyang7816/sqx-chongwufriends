@@ -1,0 +1,367 @@
+:root,
+page {
+	--pet-bg: #fbf4eb;
+	--pet-panel: #fffdf9;
+	--pet-primary: #c79662;
+	--pet-primary-deep: #8b613d;
+	--pet-text: #6d4c38;
+	--pet-subtext: #9f8a77;
+	--pet-border: #ecd7bf;
+	--pet-soft-yellow: #f7d67c;
+	--pet-soft-green: #cdebdc;
+	--pet-soft-pink: #f8d4d9;
+	--pet-soft-blue: #d8ecf6;
+	--pet-shadow: 0 14rpx 40rpx rgba(163, 120, 79, 0.08);
+}
+
+page {
+	color: var(--pet-text);
+	background: linear-gradient(180deg, #fff8f1 0%, #f8efe2 100%);
+}
+.home-main-title{
+	color: #C4956A;
+	font-size: 34rpx;
+	font-weight: 800;
+}
+.pet-page,
+.pet-card,
+.pet-panel,
+.pet-pill,
+.pet-button,
+.pet-fixed-bar,
+	.pet-banner,
+	.pet-grid-card,
+	.pet-stat-card,
+	.pet-menu-item,
+.pet-modal-card,
+.pet-empty-state {
+	box-sizing: border-box;
+}
+
+.pet-page {
+	min-height: 100vh;
+	padding-bottom: 40rpx;
+	background: linear-gradient(180deg, #fff8f1 0%, #f8efe2 100%);
+}
+
+.pet-shell {
+	padding: 0 24rpx 32rpx;
+}
+
+.pet-page-title {
+	display: block;
+	font-size: 50rpx;
+	font-weight: 700;
+	color: #c39668;
+	margin: 6rpx 0 18rpx;
+}
+
+.pet-page-note {
+	display: block;
+	font-size: 26rpx;
+	line-height: 1.7;
+	color: var(--pet-subtext);
+	margin-bottom: 18rpx;
+}
+
+.pet-section-chip {
+	display: inline-flex;
+	align-items: center;
+	height: 42rpx;
+	padding: 0 20rpx;
+	border-radius: 999rpx;
+	border: 2rpx solid #e8c27f;
+	font-size: 26rpx;
+	font-weight: 700;
+	color: #8b613d;
+	margin: 10rpx 0 18rpx;
+}
+
+.pet-summary-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20rpx;
+	margin-top: 8rpx;
+}
+
+.pet-summary-grid.is-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0;
+}
+
+.pet-summary-box {
+	text-align: center;
+	padding: 28rpx 18rpx;
+	background: rgba(255, 253, 249, 0.92);
+	border-radius: 28rpx;
+	border: 2rpx solid rgba(236, 215, 191, 0.75);
+	box-shadow: var(--pet-shadow);
+}
+
+.pet-summary-box.is-plain {
+	box-shadow: none;
+	border-radius: 0;
+	border: 0;
+	background: transparent;
+	padding: 0;
+}
+
+.pet-summary-num {
+	display: block;
+	font-size: 52rpx;
+	font-weight: 700;
+	color: #c79662;
+	margin-bottom: 10rpx;
+}
+
+.pet-list-gap > view + view {
+	margin-top: 18rpx;
+}
+
+.pet-status-pill {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 42rpx;
+	padding: 0 18rpx;
+	border-radius: 999rpx;
+	font-size: 22rpx;
+	font-weight: 600;
+}
+
+.pet-status-pill.is-success {
+	background: #dbf0dc;
+	color: #4f8d5c;
+}
+
+.pet-status-pill.is-warn {
+	background: #fce6aa;
+	color: #9a7c31;
+}
+
+.pet-status-pill.is-danger {
+	background: #f9d7db;
+	color: #be6b76;
+}
+
+.pet-icon-spot {
+	width: 84rpx;
+	height: 84rpx;
+	border-radius: 24rpx;
+	background: linear-gradient(135deg, #f8e2b6, #fff9ed);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.pet-card {
+	background: var(--pet-panel);
+	border-radius: 32rpx;
+	box-shadow: var(--pet-shadow);
+	padding: 24rpx;
+	border: 2rpx solid rgba(236, 215, 191, 0.55);
+}
+
+.pet-dashed {
+	border-style: dashed;
+	border-color: #d3a271;
+	box-shadow: none;
+}
+
+.pet-panel {
+	background: rgba(255, 253, 249, 0.96);
+	border-radius: 28rpx;
+	border: 2rpx solid rgba(236, 215, 191, 0.7);
+	box-shadow: var(--pet-shadow);
+}
+
+.pet-title {
+	font-size: 44rpx;
+	font-weight: 700;
+	color: var(--pet-primary-deep);
+	line-height: 1.2;
+}
+
+.pet-subtitle {
+	font-size: 26rpx;
+	color: var(--pet-subtext);
+	line-height: 1.5;
+}
+
+.pet-section-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 28rpx 0 20rpx;
+	font-size: 34rpx;
+	font-weight: 700;
+	color: var(--pet-primary-deep);
+}
+
+.pet-pill-row {
+	display: flex;
+	gap: 16rpx;
+	flex-wrap: wrap;
+	margin-top: 20rpx;
+}
+
+.pet-pill {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 26rpx;
+	height: 58rpx;
+	border-radius: 999rpx;
+	background: #f6eee2;
+	color: var(--pet-subtext);
+	font-size: 24rpx;
+	border: 2rpx solid transparent;
+}
+
+.pet-pill.is-active {
+	background: var(--pet-primary);
+	color: #fff;
+	box-shadow: 0 10rpx 22rpx rgba(199, 150, 98, 0.24);
+}
+
+.pet-pill.is-disabled {
+	opacity: 0.45;
+	pointer-events: none;
+}
+
+.pet-tag {
+	width: fit-content;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 20rpx;
+	height: 42rpx;
+	border-radius: 999rpx;
+	background:#F5D78E;
+	font-size: 26rpx;
+	color:#5D4037;
+	margin-right: 10rpx;
+	margin-bottom: 10rpx;
+}
+
+.pet-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 34rpx;
+	height: 74rpx;
+	border-radius: 999rpx;
+	background: var(--pet-primary);
+	color: #fff;
+	font-size: 28rpx;
+	font-weight: 700;
+	box-shadow: 0 14rpx 28rpx rgba(199, 150, 98, 0.24);
+}
+
+.pet-button.is-light {
+	background: #fff4db;
+	color: var(--pet-primary-deep);
+	box-shadow: none;
+}
+
+.pet-button.is-block {
+	display: flex;
+	width: 100%;
+	height: 88rpx;
+	margin-top: 20rpx;
+}
+
+.pet-grid-2 {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20rpx;
+}
+
+.pet-thumb {
+	width: 100%;
+	height: 220rpx;
+	border-radius: 24rpx;
+	background: linear-gradient(135deg, #f6d68a, #d2efe3);
+	overflow: hidden;
+}
+
+.pet-thumb image,
+.pet-avatar image,
+.pet-logo {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	border-radius: inherit;
+}
+
+.pet-avatar {
+	width: 88rpx;
+	height: 88rpx;
+	border-radius: 24rpx;
+	overflow: hidden;
+	background: #f5dfb1;
+	flex-shrink: 0;
+}
+
+.pet-price {
+	font-size: 44rpx;
+	font-weight: 700;
+	color: #ce8f4c;
+}
+
+.pet-muted {
+	color: var(--pet-subtext);
+	font-size: 24rpx;
+}
+
+.pet-divider {
+	height: 2rpx;
+	background: rgba(236, 215, 191, 0.8);
+	margin: 24rpx 0;
+}
+
+.pet-input-wrap {
+	padding: 22rpx 24rpx;
+	background: #fbf4e8;
+	border-radius: 24rpx;
+	border: 2rpx solid #f0dfc8;
+	min-height: 92rpx;
+	font-size: 28rpx;
+	color: var(--pet-text);
+	width: auto;
+	display: block;
+}
+
+input.pet-input-wrap,
+textarea.pet-input-wrap {
+	width: calc(100% - 48rpx);
+}
+
+.pet-textarea {
+	min-height: 180rpx;
+	line-height: 1.6;
+}
+
+.pet-fixed-bar {
+	position: sticky;
+	bottom: 20rpx;
+	padding: 18rpx 20rpx;
+	background: rgba(255, 252, 246, 0.96);
+	backdrop-filter: blur(16rpx);
+	border-radius: 30rpx;
+	box-shadow: var(--pet-shadow);
+	border: 2rpx solid rgba(236, 215, 191, 0.65);
+	margin: 24rpx;
+	z-index: 9;
+}
+
+.pet-empty-state {
+	padding: 40rpx 24rpx;
+	border-radius: 28rpx;
+	background: rgba(255, 251, 245, 0.86);
+	text-align: center;
+	color: var(--pet-subtext);
+	border: 2rpx dashed rgba(211, 162, 113, 0.7);
+}

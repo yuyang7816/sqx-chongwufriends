@@ -1,0 +1,38 @@
+package com.sqx.app.pet.payment.domain.entity;
+
+import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@TableName("pay_callback_log")
+public class PayCallbackLog implements Serializable {
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
+    @TableField("order_no")
+    private String orderNo;
+    @TableField("channel")
+    private String channel;
+    @TableField("trade_type")
+    private String tradeType;
+    @TableField("request_body")
+    private String requestBody;
+    @TableField("response_body")
+    private String responseBody;
+    @TableField("status")
+    private Integer status;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(value = "create_time", fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(value = "update_time", fill = FieldFill.UPDATE)
+    private LocalDateTime updateTime;
+    @TableLogic
+    @TableField("is_deleted")
+    private Integer isDeleted;
+}

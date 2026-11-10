@@ -1,0 +1,11 @@
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\config\FileAutoConfiguration.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\domain\UploadParam.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\domain\UploadRes.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\enums\FileError.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\enums\StorageTypeEnum.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\factory\FileStorageFactory.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\storage\AliOssFileStorage.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\storage\BTLocalFileStorage.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\storage\IFileStorage.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\storage\LocalFileStorage.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-file\src\main\java\com\sqx\common\file\utils\FileUtil.java

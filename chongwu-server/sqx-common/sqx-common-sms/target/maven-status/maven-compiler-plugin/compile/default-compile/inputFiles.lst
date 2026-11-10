@@ -1,0 +1,10 @@
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\config\SmsAutoConfiguration.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\domain\ConvertPhone.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\enums\SmsError.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\enums\SmsProviderEnum.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\factory\SmsFactory.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\provider\AliyunSmsProvider.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\provider\DXBSmsProvider.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\provider\ISmsProvider.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\provider\TencentSmsProvider.java
+F:\work\AI-chongwuFriends(和它交朋友）\chongwu-server\sqx-common\sqx-common-sms\src\main\java\com\sqx\common\sms\SmsService.java

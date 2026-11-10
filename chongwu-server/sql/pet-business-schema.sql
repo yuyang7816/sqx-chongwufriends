@@ -1,0 +1,324 @@
+-- 宠物互动社区业务表结构
+-- 逻辑删除: is_deleted 0=正常 -1=删除
+
+CREATE TABLE IF NOT EXISTS pet_city (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(64) NOT NULL COMMENT '城市名称',
+    code VARCHAR(32) DEFAULT NULL COMMENT '城市编码',
+    sort INT DEFAULT 0,
+    status TINYINT DEFAULT 1 COMMENT '1启用 0禁用',
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0
+) COMMENT='城市';
+
+CREATE TABLE IF NOT EXISTS pet_store (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    city_id BIGINT DEFAULT NULL,
+    name VARCHAR(128) NOT NULL,
+    address VARCHAR(255) DEFAULT NULL,
+    phone VARCHAR(32) DEFAULT NULL,
+    tone VARCHAR(16) DEFAULT '#f6d57c' COMMENT '展示色',
+    cover_url VARCHAR(512) DEFAULT NULL,
+    business_status TINYINT DEFAULT 1 COMMENT '1营业 0休息',
+    sort INT DEFAULT 0,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_city (city_id)
+) COMMENT='门店';
+
+CREATE TABLE IF NOT EXISTS pet_archive (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    store_id BIGINT NOT NULL,
+    name VARCHAR(64) NOT NULL,
+    pet_type VARCHAR(16) DEFAULT 'dog' COMMENT 'dog/cat',
+    breed VARCHAR(64) DEFAULT NULL,
+    gender VARCHAR(8) DEFAULT NULL,
+    age_desc VARCHAR(32) DEFAULT NULL,
+    weight_desc VARCHAR(32) DEFAULT NULL,
+    pet_code VARCHAR(32) DEFAULT NULL,
+    level_desc VARCHAR(64) DEFAULT NULL,
+    status_label VARCHAR(64) DEFAULT NULL,
+    description TEXT,
+    good_at VARCHAR(512) DEFAULT NULL COMMENT '擅长JSON',
+    avoid_items VARCHAR(512) DEFAULT NULL COMMENT '忌讳JSON',
+    tags VARCHAR(512) DEFAULT NULL COMMENT '标签JSON',
+    avatar_url VARCHAR(512) DEFAULT NULL,
+    like_count INT DEFAULT 0,
+    adoptable TINYINT DEFAULT 0 COMMENT '0否 1可领养',
+    audit_status TINYINT DEFAULT 1 COMMENT '1通过 0待审 2拒绝',
+    sort INT DEFAULT 0,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_store (store_id)
+) COMMENT='宠物档案';
+
+CREATE TABLE IF NOT EXISTS pet_album (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    pet_id BIGINT NOT NULL,
+    media_url VARCHAR(512) NOT NULL,
+    media_type TINYINT DEFAULT 1 COMMENT '1图片 2视频',
+    sort INT DEFAULT 0,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_pet (pet_id)
+) COMMENT='宠物相册';
+
+CREATE TABLE IF NOT EXISTS community_post (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    store_id BIGINT DEFAULT NULL,
+    content TEXT,
+    media_urls TEXT COMMENT '媒体URL逗号分隔',
+    media_type TINYINT DEFAULT 1 COMMENT '1图文 2视频',
+    like_count INT DEFAULT 0,
+    comment_count INT DEFAULT 0,
+    share_count INT DEFAULT 0,
+    audit_status TINYINT DEFAULT 0 COMMENT '0待审 1通过 2拒绝',
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_user (user_id)
+) COMMENT='社区动态';
+
+CREATE TABLE IF NOT EXISTS community_comment (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    post_id BIGINT NOT NULL,
+    user_id BIGINT NOT NULL,
+    content VARCHAR(512) NOT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_post (post_id)
+) COMMENT='社区评论';
+
+CREATE TABLE IF NOT EXISTS community_like (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    post_id BIGINT NOT NULL,
+    user_id BIGINT NOT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    UNIQUE KEY uk_post_user (post_id, user_id)
+) COMMENT='社区点赞';
+
+CREATE TABLE IF NOT EXISTS adopt_application (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    pet_id BIGINT NOT NULL,
+    real_name VARCHAR(64) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    city VARCHAR(64) DEFAULT NULL,
+    address VARCHAR(255) DEFAULT NULL,
+    reason TEXT,
+    status TINYINT DEFAULT 1 COMMENT '1待审核 2初审通过 3复审通过 4面谈 5签约 6完成 7拒绝',
+    reject_reason VARCHAR(255) DEFAULT NULL,
+    idempotent_key VARCHAR(64) DEFAULT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_user (user_id),
+    KEY idx_pet (pet_id)
+) COMMENT='领养申请';
+
+CREATE TABLE IF NOT EXISTS adopt_visit (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    application_id BIGINT NOT NULL,
+    visit_time DATETIME DEFAULT NULL,
+    content TEXT,
+    operator_id BIGINT DEFAULT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_app (application_id)
+) COMMENT='领养回访';
+
+CREATE TABLE IF NOT EXISTS mall_spu (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(128) NOT NULL,
+    category VARCHAR(64) DEFAULT NULL,
+    cover_url VARCHAR(512) DEFAULT NULL,
+    description TEXT,
+    price DECIMAL(10,2) DEFAULT 0,
+    point_price INT DEFAULT 0,
+    status TINYINT DEFAULT 1,
+    sort INT DEFAULT 0,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0
+) COMMENT='商城SPU';
+
+CREATE TABLE IF NOT EXISTS mall_sku (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    spu_id BIGINT NOT NULL,
+    sku_name VARCHAR(128) DEFAULT NULL,
+    price DECIMAL(10,2) DEFAULT 0,
+    point_price INT DEFAULT 0,
+    stock INT DEFAULT 0,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_spu (spu_id)
+) COMMENT='商城SKU';
+
+CREATE TABLE IF NOT EXISTS mall_order (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    order_no VARCHAR(64) NOT NULL,
+    user_id BIGINT NOT NULL,
+    spu_id BIGINT DEFAULT NULL,
+    sku_id BIGINT DEFAULT NULL,
+    quantity INT DEFAULT 1,
+    pay_amount DECIMAL(10,2) DEFAULT 0,
+    point_amount INT DEFAULT 0,
+    pay_type TINYINT DEFAULT 1 COMMENT '1现金 2积分',
+    status TINYINT DEFAULT 1 COMMENT '1待支付 2已支付 3已取消 4已退款',
+    idempotent_key VARCHAR(64) DEFAULT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    UNIQUE KEY uk_order_no (order_no),
+    KEY idx_user (user_id)
+) COMMENT='商城订单';
+
+CREATE TABLE IF NOT EXISTS user_asset (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    points INT DEFAULT 0,
+    coins INT DEFAULT 0,
+    love_value INT DEFAULT 0,
+    flowers INT DEFAULT 0,
+    level INT DEFAULT 1,
+    level_name VARCHAR(64) DEFAULT 'Lv.1',
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    UNIQUE KEY uk_user (user_id)
+) COMMENT='用户资产';
+
+CREATE TABLE IF NOT EXISTS user_asset_ledger (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    asset_type VARCHAR(16) NOT NULL COMMENT 'points/coins/love/flowers',
+    change_amount INT NOT NULL,
+    direction TINYINT NOT NULL COMMENT '1收入 2支出',
+    biz_type VARCHAR(32) DEFAULT NULL,
+    biz_id BIGINT DEFAULT NULL,
+    title VARCHAR(128) DEFAULT NULL,
+    description VARCHAR(255) DEFAULT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_user (user_id)
+) COMMENT='资产流水';
+
+CREATE TABLE IF NOT EXISTS island_pet (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    hunger INT DEFAULT 80,
+    clean INT DEFAULT 80,
+    mood INT DEFAULT 80,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    UNIQUE KEY uk_user (user_id)
+) COMMENT='岛宅宠物状态';
+
+CREATE TABLE IF NOT EXISTS island_task (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(128) NOT NULL,
+    description VARCHAR(255) DEFAULT NULL,
+    reward_desc VARCHAR(128) DEFAULT NULL,
+    required_level INT DEFAULT 1,
+    sort INT DEFAULT 0,
+    status TINYINT DEFAULT 1,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0
+) COMMENT='岛宅任务';
+
+CREATE TABLE IF NOT EXISTS island_task_record (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    task_id BIGINT NOT NULL,
+    status TINYINT DEFAULT 1 COMMENT '1完成 2进行中 3未开始',
+    complete_time DATETIME DEFAULT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    KEY idx_user_task (user_id, task_id)
+) COMMENT='任务完成记录';
+
+CREATE TABLE IF NOT EXISTS feed_order (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    order_no VARCHAR(64) NOT NULL,
+    user_id BIGINT NOT NULL,
+    pet_id BIGINT NOT NULL,
+    product_name VARCHAR(128) NOT NULL,
+    amount DECIMAL(10,2) DEFAULT 0,
+    quantity INT DEFAULT 1,
+    message VARCHAR(255) DEFAULT NULL,
+    status TINYINT DEFAULT 1 COMMENT '1待支付 2已支付 3已反馈',
+    idempotent_key VARCHAR(64) DEFAULT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    UNIQUE KEY uk_order_no (order_no)
+) COMMENT='投喂订单';
+
+CREATE TABLE IF NOT EXISTS operation_banner (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(128) NOT NULL,
+    image_url VARCHAR(512) DEFAULT NULL,
+    jump_url VARCHAR(512) DEFAULT NULL,
+    position_code VARCHAR(32) DEFAULT 'home' COMMENT 'home/adopt/shop',
+    sort INT DEFAULT 0,
+    status TINYINT DEFAULT 1,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0
+) COMMENT='运营位';
+
+CREATE TABLE IF NOT EXISTS pet_strategy (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(128) NOT NULL,
+    sub_title VARCHAR(255) DEFAULT NULL,
+    tag VARCHAR(32) DEFAULT NULL,
+    cover_url VARCHAR(512) DEFAULT NULL,
+    content TEXT,
+    view_count INT DEFAULT 0,
+    like_count INT DEFAULT 0,
+    sort INT DEFAULT 0,
+    status TINYINT DEFAULT 1,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0
+) COMMENT='养宠攻略';
+
+CREATE TABLE IF NOT EXISTS api_idempotent (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    idempotent_key VARCHAR(64) NOT NULL,
+    user_id BIGINT DEFAULT NULL,
+    api_path VARCHAR(128) NOT NULL,
+    result_snapshot TEXT,
+    expire_time DATETIME NOT NULL,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0,
+    UNIQUE KEY uk_key_path (idempotent_key, api_path)
+) COMMENT='接口幂等记录';
+
+CREATE TABLE IF NOT EXISTS pay_callback_log (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    order_no VARCHAR(64) DEFAULT NULL,
+    channel VARCHAR(32) DEFAULT NULL,
+    trade_type VARCHAR(32) DEFAULT NULL,
+    request_body TEXT,
+    response_body TEXT,
+    status TINYINT DEFAULT 1 COMMENT '1成功 2失败',
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    is_deleted TINYINT DEFAULT 0
+) COMMENT='支付回调日志';

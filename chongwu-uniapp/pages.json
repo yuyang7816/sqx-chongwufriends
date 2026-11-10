@@ -1,0 +1,389 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^u--(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^up-(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^u-([^-].*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue"
+		}
+	},
+	"pages": [{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/msg/msg",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/island/island",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "岛宅",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/shop/shop",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "商城",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "我的",
+				"navigationBarBackgroundColor": "#FFF8F0",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/webView/webView",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "详情",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		}
+	],
+	"subPackages": [{
+		"root": "packageA",
+		"pages": [{
+			"path": "login/index",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "登录",
+				"navigationBarBackgroundColor": "#f7ede5",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "login/forgot",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "找回密码",
+				"navigationBarBackgroundColor": "#f7ede5",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "login/register",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "注册",
+				"navigationBarBackgroundColor": "#f7ede5",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "adopt/list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "退役宠物领养",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "adopt/detail",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "adopt/form",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "领养登记表",
+				"navigationBarBackgroundColor": "#FFF8F0",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "adopt/mine",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "我的领养申请",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "store/list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "门店小伙伴",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "archive/detail",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "strategy/list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "养宠攻略",
+				"navigationBarBackgroundColor": "#fdf8f2",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "strategy/detail",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "养宠攻略",
+				"navigationBarBackgroundColor": "#fdf8f2",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "ranking/list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "人气打榜",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "tasks/center",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "任务中心",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"backgroundTextStyle": "dark"
+			}
+		}, {
+			"path": "home/setup",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "常驻宠物设置",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "market/list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "宠物集市",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"backgroundTextStyle": "dark",
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "market/records",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "我的兑换",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "product/detail",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "商品详情",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "post/create",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "post/mine",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "post/detail",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "动态详情",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "post/complaint",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "投诉",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "post/complaint-list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "我的投诉",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "post/rules",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "社区规范",
+				"navigationBarBackgroundColor": "#FFF8F0",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "settings/index",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "设置",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "coupon/list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "我的券包",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "gift/list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "我的赠送记录",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "gift/video",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "视频反馈",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "assist/list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "我的助力",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "wecom/index",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "添加企微",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "feed/index",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "投喂福利",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"backgroundTextStyle": "dark",
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "exchange/list",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "周边兑换",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 80
+			}
+		}, {
+			"path": "payment/result",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "支付结果",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		}, {
+			"path": "payment/alipay-bridge",
+			"style": {
+				"navigationStyle": "default",
+				"navigationBarTitleText": "支付宝支付",
+				"navigationBarBackgroundColor": "#fdf5ec",
+				"navigationBarTextStyle": "black"
+			}
+		}]
+	}],
+	"globalStyle": {
+		"navigationStyle": "default",
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "和它交朋友",
+		"navigationBarBackgroundColor": "#fdf5ec",
+		"backgroundColor": "#ffffff"
+	},
+	"tabBar": {
+		"color": "#a7927d",
+		"selectedColor": "#c79662",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "white",
+
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "/static/image/tabbar/index.png",
+			"selectedIconPath": "/static/image/tabbar/index_.png",
+			"text": "探索"
+		}, {
+			"pagePath": "pages/msg/msg",
+			"iconPath": "/static/image/tabbar/pyq.png",
+			"selectedIconPath": "/static/image/tabbar/pyq_.png",
+			"text": "朋友圈"
+		}, {
+			"pagePath": "pages/island/island",
+			"iconPath": "/static/image/tabbar/dz.png",
+			"selectedIconPath": "/static/image/tabbar/dz_.png",
+			"text": "岛宅"
+		}, {
+			"pagePath": "pages/shop/shop",
+			"iconPath": "/static/image/tabbar/shop.png",
+			"selectedIconPath": "/static/image/tabbar/shop_.png",
+			"text": "商城"
+		}, {
+			"pagePath": "pages/my/my",
+			"iconPath": "/static/image/tabbar/my.png",
+			"selectedIconPath": "/static/image/tabbar/my_.png",
+			"text": "我的"
+		}]
+	},
+	"uniIdRouter": {}
+}
